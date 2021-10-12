@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}home.html{% endblock %}
+
+{% block extra-style %}
+<style type="text/css">
+*{
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+}
+
+.disney{
+	font-size : xx-large;
+	font-style : italic;
+	font-weight : bold;
+	color : white;
+}
+.search{
+	font-style : italic;
+	color : black;
+}
+.home-image {
+    background-image: url("{% static 'img/img1.gif' %}");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    height: 500px;
+    border-top: 10px solid #b9e6fa;
+    border-bottom: 10px solid #b9e6fa;
+    padding: 20px 0 0 20px;
+}
+.title {
+    color: #fff691;
+    font-weight: bold;
+    font-style: italic;
+
+}
+.powered {
+    position: relative;
+    top: 77%;
+    color: #cc0;
+    font-style: italic;
+}
+.col-md-4{
+	text-align : center;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="home-image">
+        <h2 class="title"></h2>
+    </div>
+
+    <hr style="margin: 10px 0;">
+
+    <div class="row text-center">
+    	<div class="col-md-4">
+        	<h3>Chatbot</h3>
+        	<p>Chatbot application answers questions about Disney animation movies.
+        		If you search anything, the chat begins. But If you use too difficult words, the 'chatbot' may not understand.</p>
+        </div>
+        <div class="col-md-4">
+           	<h3>Bookmark App</h3>
+            <p>Bookmark is a Uniform Resource Identifier (URI)
+                that is stored for later retrieval‎ in any of various storage formats.
+                You can store your own bookmarks by Bookmark application.
+                It's also possible to update or delete your bookmarks.</p>
+        </div>
+        <div class="col-md-4">
+           <h3>Blog App</h3>
+            <p>This application makes it possible to log daily events or write your own interests
+                such as hobbies, techniques, etc.
+                A typical blog combines text, digital images, and links to other blogs, web pages,
+                and other media related to its topic.</p>
+        </div>
+        <div class="col-md-4">
+        	<h3>Photo App</h3>
+        	<p>The photo application shows movie posters and scenes from the movie.
+        		You can add pictures to existing movies or add new ones. When you add a picture,
+        		you have to choose a picture that fits the mood of each movie.</p>
+        </div>
+        <div class="col-md-4">
+        	<h3>Survey App</h3>
+        	<p>The survey application can conduct surveys related to Disney animation movies.
+        		Through this application, you can understand consumers' thoughts on Disney animation movies.</p>
+        </div>
+        <div class="col-md-4">
+        	<h3>Add & Change App</h3>
+        	<p>This application can work on bookmark, blog, album and photo apps without having to enter 'Admin' App.
+        		'Add'application can be inserted and 'Change'application can be update and deleted.</p>
+        </div>
+    </div>
+    
+    <hr>
+    
+    <div class = "row">
+    	<div class="col-md-4">
+        	<img src="/static/img/img100.jpg" width="350" height="200">
+        </div>
+        <div class="col-md-4">
+        	<img src="/static/img/img200.jpg" width="350" height="200">
+        </div>
+        <div class="col-md-4">
+        	<img src="/static/img/img300.jpg" width="350" height="200">
+        </div>
+	</div>
+	<br>
+	<div class = "row">
+        <div class="col-md-4">
+        	<img src="/static/img/img500.gif" width="350" height="200">
+        </div>
+        <div class="col-md-4">
+        	<img src="/static/img/img700.gif" width="350" height="200">
+        </div>
+        <div class="col-md-4">
+        	<img src="/static/img/img4000.gif" width="350" height="200">
+        </div>
+    </div>
+    
+    <hr>
+    <hr>
+
+{% block footer %}
+<footer class="fixed-bottom bg-info">
+    <div class="text-white font-italic text-right mr-5" style="background-color: #b9e6fa;"> 2021 SEUNGHYUN </div>
+</footer>
+{% endblock %}
+    
+{% endblock content %}
+
