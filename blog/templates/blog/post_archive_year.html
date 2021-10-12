@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{%block title%}Post Archive_year{%endblock%}
+{% block extra-style %}
+<style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+        }
+
+        #main {
+            text-align: center;
+            padding-top: 100px;
+        }
+        h1 {
+            margin-bottom: 30px;
+            margin-top : 30px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+</style>
+{% endblock extra-style %}
+{%block content%}
+<h1><b>Post Archives for {{ year|date:"Y" }}</b></h1>
+
+<ul>
+    {% for date in date_list %}
+    <li style="display: inline;">
+        <a href="{% url 'blog:post_month_archive' year|date:'Y' date|date:'b' %}">{{ date|date:"F" }}</a></li>
+    {% endfor %}
+</ul>
+<br>
+
+<div>
+    <ul>
+        {% for post in object_list %}
+        <li>{{ post.modify_dt|date:"Y-m-d" }}&nbsp;&nbsp;&nbsp;
+        <a href="{{ post.get_absolute_url }}"><strong>{{ post.title }}</strong><hr></a></li>
+        {% endfor %}
+    </ul>
+</div>
+{%endblock%}

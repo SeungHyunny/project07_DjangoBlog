@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{%block title%}Post Archive_day{%endblock%}
+{% block extra-style %}
+<style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+        }
+
+        #main {
+            text-align: center;
+            padding-top: 100px;
+        }
+        h1 {
+            margin-bottom: 30px;
+            margin-top : 30px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+</style>
+{% endblock extra-style %}
+{%block content%}
+<h1><b>Post Archives for {{ day|date:"N d, Y" }}</b></h1>
+<div>
+    <ul>
+        {% for post in object_list %}
+        <li>{{ post.modify_dt|date:"Y-m-d" }}&nbsp;&nbsp;&nbsp;
+        <a href="{{ post.get_absolute_url }}"><strong>{{ post.title }}</strong></a></li>
+        {% endfor %}
+    </ul>
+</div>
+{%endblock%}
+
