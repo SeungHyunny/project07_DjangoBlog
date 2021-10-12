@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Blog post_detail{% endblock %}
+{% block extra-style %}
+<style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+        }
+
+        #main {
+            text-align: center;
+            padding-top: 100px;
+        }
+        h1 {
+            margin-bottom: 30px;
+            margin-top : 30px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+</style>
+{% endblock extra-style %}
+{% block content %}
+
+{%if latest_question_list %}
+	<h1><b>설문조사 list</b></h1>
+   <ul>
+   {%for question in latest_question_list %}
+      <li>
+         <a href="/polls/{{question.id}}/">{{question.question_text}}</a>
+         <hr>
+      </li>
+   {% endfor %}   
+   </ul>
+
+{% else %}
+   <p> No Polls are available.</p>
+{% endif %}
+{% endblock %}
