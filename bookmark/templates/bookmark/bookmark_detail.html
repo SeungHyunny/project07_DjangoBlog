@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Django Bookmark Detail{% endblock %}
+{% block extra-style %}
+<style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+        }
+
+        #main {
+            text-align: center;
+            padding-top: 100px;
+        }
+        h1 {
+            margin-bottom: 30px;
+            margin-top : 30px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+</style>
+{% endblock extra-style %}
+{% block content %}
+<div id="content">
+	<h1><b>{{object.title}}</b></h1>
+	<ul>
+		<li>URL:<a href="{{object.url}}">{{object.url}}</a></li>
+	</ul>
+</div>
+{% endblock %}
