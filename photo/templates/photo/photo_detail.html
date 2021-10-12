@@ -1,0 +1,47 @@
+{% extends 'base.html'%}
+{%block title%}photo_detail.html{%endblock%}
+{% block extra-style %}
+<style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+        }
+
+        #main {
+            text-align: center;
+            padding-top: 100px;
+        }
+        h1 {
+            margin-bottom: 30px;
+            margin-top : 30px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+</style>
+{% endblock extra-style %}
+{%block content%}
+
+	<h2 class="mt-5"><b>{{object.title}}</b></h2>
+	<hr>
+	<div class="row">
+		<div class="col-md-9">
+			<a href="{{ object.image.url }}">
+				<img src="{{ object.image.url }}" style="width:100%;">
+			</a>
+		</div>
+		
+		<ul class="col-md-3 mt-3">
+			<li class="h5">Photo Description</li>
+				{% if object.description %}<p>{{ object.description|linebreaks }}</p>
+				{% else %}<p>(blank)</p>{% endif %}
+			<li class="h5">Date Uploaded</li>
+				<p class="font-italic">{{ object.upload_dt }}</p>
+			<li class="h5">Album Name</li>
+				<p class="font-italic">
+				<a href="{% url 'photo:album_detail' object.album.id %}">{{ object.album.name }}</a>
+				</p>
+		</ul>
+	</div>
+{% endblock %}
